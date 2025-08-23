@@ -26,6 +26,74 @@
         }
     </style>
 </head>
+<section id="gallery">
+    <h2>Gallery</h2>
+    <div class="carousel">
+        <div class="slides">
+            <img src="images/painting1.jpg" alt="Painting 1">
+            <img src="images/painting2.jpg" alt="Painting 2">
+            <img src="images/painting3.jpg" alt="Painting 3">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+</section>
+
+<style>
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+</style>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelector('.slides');
+const totalSlides = document.querySelectorAll('.slides img').length;
+
+document.querySelector('.next').addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+});
+
+function updateCarousel() {
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+</script>
+    
 <body>
     <header>
         <h1>Ariadna Arranz</h1>
