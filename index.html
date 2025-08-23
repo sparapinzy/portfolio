@@ -3,106 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ariadna Arranz - Pinzy's Art Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fafafa;
-            color: #333;
-            text-align: center;
-        }
-        header {
-            padding: 2rem;
-        }
-        h1 {
-            margin-bottom: 0.5rem;
-        }
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #555;
-        }
-    </style>
+    <title>Your Name - Art Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<section id="gallery">
-    <h2>Gallery</h2>
-    <div class="carousel">
-        <div class="slides">
-            <img src="images/monster1.JPG" alt="Painting 1">
-            <img src="images/squarelabbraocchio.jpg" alt="Painting 2">
-            <img src="images/clipper.jpg" alt="Painting 3">
-        </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-    </div>
-</section>
-
-<style>
-/* Carousel Styles */
-.carousel {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slides img {
-    width: 100%;
-    flex-shrink: 0;
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 24px;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-</style>
-
-<script>
-let currentSlide = 0;
-const slides = document.querySelector('.slides');
-const totalSlides = document.querySelectorAll('.slides img').length;
-
-document.querySelector('.next').addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateCarousel();
-});
-
-document.querySelector('.prev').addEventListener('click', () => {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    updateCarousel();
-});
-
-function updateCarousel() {
-    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-}
-</script>
-    
 <body>
     <header>
-        <h1>Ariadna Arranz</h1>
-        <p>Artist Wannabe</p>
+        <h1>Your Name</h1>
+        <p>Artist & Painter</p>
         <nav>
             <a href="#gallery">Gallery</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="carousel">
+            <div class="slides">
+                <img src="images/calle.jpg" alt="Painting 1">
+                <img src="images/milanoest.jpg" alt="Painting 2">
+                <img src="images/sala.jpg" alt="Painting 3">
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
