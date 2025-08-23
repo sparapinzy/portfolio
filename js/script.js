@@ -1,6 +1,6 @@
 let currentSlide = 0;
 const slides = document.querySelector('.slides');
-const totalSlides = document.querySelectorAll('.slides img').length;
+const totalSlides = document.querySelectorAll('.slides figure').length;
 let slideInterval = setInterval(nextSlide, 4000); // 4 seconds
 
 document.querySelector('.next').addEventListener('click', () => {
