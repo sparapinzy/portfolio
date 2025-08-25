@@ -1,0 +1,53 @@
+name: Build & Deploy Minified Site
+
+on:
+  push:
+    branches:
+      - main  # Change if your default branch is different
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out the repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # 3. Install minifier tools
+      - name: Install CLI tools
+        run: npm install -g clean-css-cli terser
+
+      # 4. Create dist folder and copy all files
+      - name: Prepare dist folder
+        run: |
+          mkdir dist
+          cp -R * dist/
+          mkdir -p dist/css dist/js
+
+      # 5. Minify CSS
+      - name: Minify CSS
+        run: cleancss -o dist/css/style.min.css css/style.css
+
+      # 6. Minify JS
+      - name: Minify JavaScript
+        run: terser js/script.js -o dist/js/script.min.js -c -m
+
+      # 7. Update HTML to use minified files
+      - name: Update HTML references
+        run: |
+          find dist -name "*.html" -exec sed -i 's|css/style.css|css/style.min.css|g' {} +
+          find dist -name "*.html" -exec sed -i 's|js/script.js|js/script.min.js|g' {} +
+
+      # 8. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

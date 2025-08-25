@@ -1,22 +1,31 @@
-/* Light mode variables */
+/* ============================= */
+/* LIGHT MODE VARIABLES */
+/* ============================= */
 :root {
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bg-color: #fafafa;
     --text-color: #000;
     --header-bg: #fafafa;
     --nav-link: #555;
     --nav-link-active: #000;
     --footer-bg: #fafafa;
-    --footer-text: #fafafa;
-    --button-bg: #333;
+    --footer-text: #000;
+    --button-bg: #fff;
     --button-text: #fafafa;
     --button-hover-bg: #ffcc00;
     --button-hover-text: #000;
     --carousel-bg: #fafafa;
-    --caption-color: #444;
+    --caption-color: #000;
+    --social-links-color: #000;
 }
 
-/* Dark mode variables */
+/* ============================= */
+/* DARK MODE VARIABLES */
+/* ============================= */
 body.dark-mode {
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bg-color: #121212;
     --text-color: #f0f0f0;
     --header-bg: #1e1e1e;
@@ -30,51 +39,90 @@ body.dark-mode {
     --button-hover-text: #000;
     --carousel-bg: #1a1a1a;
     --caption-color: #ddd;
+    --social-links-color: #fff;
 }
 
-/* Apply variables globally */
+/* ============================= */
+/* GLOBAL STYLES */
+/* ============================= */
 body {
+    font-family:  var(--font-family);
+    margin: 0;
+    padding: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
+    text-align: center;
 }
 
-header {
+h1 {
+    margin-bottom: 0.5rem;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
     background-color: var(--header-bg);
+    flex-wrap: wrap; /* allows stacking on small screens */
 }
 
-nav a {
+/* Left side: Logo + Title */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Logo */
+.site-logo {
+    max-width: 120px; /* adjust size here */
+    height: auto;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: logoFadeIn 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+/* Title + Tagline */
+.site-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-title {
+    font-size: 1.8rem;
+    margin: 0;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.site-tagline {
+    font-size: 1rem;
+    margin: 0;
     color: var(--nav-link);
 }
 
-nav a.active {
+/* Right side: Menu + Toggle */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.site-nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--nav-link);
+    font-weight: bold;
+}
+
+.site-nav a.active {
     color: var(--nav-link-active);
     border-bottom: 2px solid var(--nav-link-active);
-}
-
-.contact-btn {
-    background: var(--button-bg);
-    color: var(--button-text);
-}
-
-.contact-btn:hover {
-    background: var(--button-hover-bg);
-    color: var(--button-hover-text);
-}
-
-/* General styles */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fafafa;
-    color: #000;
-    text-align: center;
-}
-
-/* Header styles */
-header {
-    text-align: center;
-    padding: 1rem;
 }
 
 .logo-link {
@@ -82,37 +130,24 @@ header {
     text-decoration: none;
 }
 
-.site-logo {
-    max-width: 180px;
-    height: auto;
-    display: block;
-    margin: 0 auto 0.5rem auto;
-}
-
-/* Navigation styles */
+/* ============================= */
+/* NAVIGATION */
+/* ============================= */
 nav a {
     margin: 0 10px;
     text-decoration: none;
-    color: #555;
+    color: var(--nav-link);
     font-weight: bold;
 }
 
 nav a.active {
-    color: #000;
-    border-bottom: 2px solid #000;
+    color: var(--nav-link-active);
+    border-bottom: 2px solid var(--nav-link-active);
 }
 
-h1 {
-    margin-bottom: 0.5rem;
-}
-
-nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #555;
-}
-
-/* Carousel container */
+/* ============================= */
+/* CAROUSEL */
+/* ============================= */
 .carousel {
     position: relative;
     max-width: 800px;
@@ -121,13 +156,11 @@ nav a {
     background: var(--carousel-bg);
 }
 
-/* Slides container */
 .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
-/* Each slide */
 .slides figure {
     min-width: 100%;
     margin: 0;
@@ -135,7 +168,6 @@ nav a {
     text-align: center;
 }
 
-/* Images */
 .slides img {
     width: auto;
     max-width: 100%;
@@ -144,26 +176,17 @@ nav a {
     margin: 0 auto;
 }
 
-/* Captions below images */
 figcaption {
     margin-top: 0.5rem;
     font-size: 1rem;
     color: var(--caption-color);
-    font-style: italic;
 }
 
-@media (max-width: 600px) {
-    nav {
-        display: block;
-        margin-top: 0.5rem;
-    }
-    nav a {
-        display: inline-block;
-        margin: 5px;
-    }
-}
-/* Navigation buttons */
-.prev, .next {
+/* ============================= */
+/* CAROUSEL BUTTONS */
+/* ============================= */
+.prev,
+.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -178,13 +201,15 @@ figcaption {
 .prev { left: 10px; }
 .next { right: 10px; }
 
+/* ============================= */
+/* FOOTER */
+/* ============================= */
 footer {
     padding: 1.5rem;
     margin-top: 2rem;
     background-color: var(--footer-bg);
     color: var(--footer-text);
 }
-
 
 footer p {
     margin: 0.5rem 0;
@@ -197,48 +222,31 @@ footer p {
 .social-links a {
     display: inline-block;
     margin: 0 10px;
-    color: white;
     transition: color 0.3s ease, transform 0.3s cubic-bezier(.34,1.56,.64,1);
+    color: var(--social-links-color);
 }
 
 .social-links a svg {
     width: 32px;
     height: 32px;
+    color: var(--social-links-color);
     transition: transform 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #ffcc00; /* highlight color on hover */
-    transform: scale(1.2); /* grow the whole link slightly */
+    color: #ffcc00;
+    transform: scale(1.2);
 }
 
 footer .copyright {
     font-size: 0.9rem;
-    color: #bbb;
+    color: var(--footer-text);
     margin-top: 1rem;
 }
 
-.site-logo {
-    max-width: 180px;
-    height: auto;
-    display: block;
-    margin: 0 auto 0.5rem auto;
-    opacity: 0; /* start invisible */
-    transform: scale(0.9); /* start slightly smaller */
-    animation: logoFadeIn 0.8s ease-out forwards;
-    animation-delay: 0.2s;
-
-}
-
-/* Keyframes for fade + zoom */
-@keyframes logoFadeIn {
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Contact page styles */
+/* ============================= */
+/* CONTACT PAGE */
+/* ============================= */
 #contact {
     max-width: 800px;
     margin: 2rem auto;
@@ -252,8 +260,8 @@ footer .copyright {
 
 .contact-btn {
     display: inline-block;
-    background: #333;
-    color: white;
+    background: var(--button-bg);
+    color: var(--button-text);
     padding: 0.75rem 1.5rem;
     margin: 0.5rem;
     border-radius: 5px;
@@ -262,24 +270,61 @@ footer .copyright {
 }
 
 .contact-btn:hover {
-    background: #ffcc00;
-    color: #000;
+    background: var(--button-hover-bg);
+    color: var(--button-hover-text);
     transform: scale(1.05);
 }
 
-
+/* ============================= */
+/* DARK MODE SPECIFICS */
+/* ============================= */
 body.dark-mode .carousel {
     background-color: #1a1a1a;
 }
 
 body.dark-mode figcaption {
-    color: #ddd;
+    color: #fff;
 }
 
+/* ============================= */
+/* ANIMATIONS */
+/* ============================= */
+@keyframes logoFadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
 @media (max-width: 600px) {
-    .prev, .next {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-right {
+        margin-top: 0.5rem;
+    }    
+    .site-nav {
+        margin-top: 0.5rem;
+    }
+    nav {
+        display: block;
+        margin-top: 0.5rem;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .prev,
+    .next {
         opacity: 0;
     }
+
     .carousel:active .prev,
     .carousel:active .next {
         opacity: 1;

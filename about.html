@@ -4,53 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Your Name</title>
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+s
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
-    <header>
+    <!-- ================= HEADER ================= -->
+<header class="site-header">
+    <div class="header-left">
         <a href="index.html" class="logo-link">
-            <img src="images/logo-light.png" alt="Your Name Logo" class="site-logo" id="site-logo">
+            <img alt="Your Name Logo" class="site-logo" id="site-logo">
         </a>
-        <p>Artist & Painter</p>
-        <nav>
+        <div class="site-text">
+            <h1 class="site-title">Ariadna Arranz</h1>
+            <p class="site-tagline">Pinzy's Portfolio</p>
+        </div>
+    </div>
+    <div class="header-right">
+        <nav class="site-nav">
             <a href="index.html">Home</a>
-            <a href="about.html" class="active">About</a>
+            <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </nav>
         <button id="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
-    </header>
+    </div>
+</header>
 
+    <!-- ================= ABOUT SECTION ================= -->
     <main id="about">
         <h2>About Me</h2>
         <div class="about-container">
-            <img src="images/profile.jpg" alt="Your portrait" class="about-photo">
+            <img src="images/profile.jpg" alt="Portrait of Your Name" class="about-photo">
             <p>
                 I am an artist inspired by the beauty of nature, the chaos of cities, and the quiet moments in between. 
                 My work explores the relationship between light, color, and emotion, using both traditional and digital mediums.
-                <br><br>
+            </p>
+            <p>
                 Through my paintings, I aim to create a space where viewers can pause, reflect, 
                 and connect with their own inner landscapes.
             </p>
         </div>
     </main>
 
+    <!-- ================= FOOTER ================= -->
     <footer>
         <p>Connect with me:</p>
         <div class="social-links">
+            <!-- Bluesky -->
             <a href="https://bsky.app/profile/yourhandle.bsky.social" target="_blank" aria-label="Bluesky">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="currentColor"><path d="M300 0c165.7 0 300 134.3 300 300S465.7 600 300 600 0 465.7 0 300 134.3 0 300 0zm0 100c-45 0-81.4 36.4-81.4 81.4 0 16.6 5.1 32.1 13.8 45l67.6 97.1 67.6-97.1c8.7-12.9 13.8-28.4 13.8-45C381.4 136.4 345 100 300 100z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="currentColor">
+                    <path d="M300 0c165.7 0 300 134.3 300 300S465.7 600 300 600 0 465.7 0 300 134.3 0 300 0zm0 100c-45 0-81.4 36.4-81.4 81.4 0 16.6 5.1 32.1 13.8 45l67.6 97.1 67.6-97.1c8.7-12.9 13.8-28.4 13.8-45C381.4 136.4 345 100 300 100z"/>
+                </svg>
             </a>
+            <!-- Etsy -->
             <a href="https://www.etsy.com/shop/YourShopName" target="_blank" aria-label="Etsy">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M256 0C114.836 0 0 114.836 0 256s114.836 256 256 256 256-114.836 256-256S397.164 0 256 0zm75.5 381.5h-151v-31h82.5v-72.5h-68v-30h68V175h-82.5v-31h151v31h-68v72.5h68v30h-68V350.5h68v31z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+                    <path d="M256 0C114.836 0 0 114.836 0 256s114.836 256 256 256 256-114.836 256-256S397.164 0 256 0zm75.5 381.5h-151v-31h82.5v-72.5h-68v-30h68V175h-82.5v-31h151v31h-68v72.5h68v30h-68V350.5h68v31z"/>
+                </svg>
             </a>
+            <!-- Email -->
             <a href="mailto:you@example.com" aria-label="Email">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 13.065L0 6V4l12 7 12-7v2l-12 7.065zM0 8v12h24V8l-12 7L0 8z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 13.065L0 6V4l12 7 12-7v2l-12 7.065zM0 8v12h24V8l-12 7L0 8z"/>
+                </svg>
             </a>
-        </div>
-        <p class="copyright">&copy; 2024 Your Name. All rights reserved.</p>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
-</html>
+        </

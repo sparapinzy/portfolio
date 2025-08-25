@@ -3,62 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Art Portfolio</title>
+    <title>Ariadna Arranz - Pinzy's Portfolio</title>
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
-    <header>
+    <!-- ================= HEADER ================= -->
+<header class="site-header">
+    <div class="header-left">
         <a href="index.html" class="logo-link">
-            <img src="images/logo-light.png" alt="Your Name Logo" class="site-logo" id="site-logo">
+            <img alt="Your Name Logo" class="site-logo" id="site-logo">
         </a>
-        <p>Artist & Painter</p>
-        <nav>
-            <a href="index.html" class="active">Home</a>
+        <div class="site-text">
+            <h1 class="site-title">Ariadna Arranz</h1>
+            <p class="site-tagline">Pinzy's Portfolio</p>
+        </div>
+    </div>
+    <div class="header-right">
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </nav>
         <button id="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
-    </header>
+    </div>
+</header>
 
+    <!-- ================= GALLERY ================= -->
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="carousel">
             <div class="slides">
                 <figure>
-                    <img src="images/handfoot.JPG" alt="Painting 1">
+                    <img src="images/handfoot.JPG" alt="Hand-Foot — Oil on canvas — 2025">
                     <figcaption>Hand-Foot — Oil on canvas — 2025</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/solvay2027.jpg" alt="Painting 2">
+                    <img src="images/solvay2027.jpg" alt="Whispers in the Forest — 2022">
                     <figcaption>Whispers in the Forest — 2022</figcaption>
                 </figure>
                 <figure>
-                    <img src="images/sala.jpg" alt="Painting 3">
+                    <img src="images/sala.jpg" alt="Urban Dreams — 2021">
                     <figcaption>Urban Dreams — 2021</figcaption>
                 </figure>
             </div>
-            <button class="prev">&#10094;</button>
-            <button class="next">&#10095;</button>
+
+            <!-- Carousel controls -->
+            <button class="prev" aria-label="Previous slide">&#10094;</button>
+            <button class="next" aria-label="Next slide">&#10095;</button>
         </div>
     </section>
 
+    <!-- ================= FOOTER ================= -->
     <footer>
         <p>Connect with me:</p>
         <div class="social-links">
-            <a href="https://bsky.app/profile/yourhandle.bsky.social" target="_blank" aria-label="Bluesky">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="currentColor"><path d="M300 0c165.7 0 300 134.3 300 300S465.7 600 300 600 0 465.7 0 300 134.3 0 300 0zm0 100c-45 0-81.4 36.4-81.4 81.4 0 16.6 5.1 32.1 13.8 45l67.6 97.1 67.6-97.1c8.7-12.9 13.8-28.4 13.8-45C381.4 136.4 345 100 300 100z"/></svg>
+            <!-- Bluesky -->
+            <a href="https://bsky.app/profile/pinzyx.bsky.social" target="_blank" aria-label="Bluesky">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="currentColor">
+                    <path d="M300 0c165.7 0 300 134.3 300 300S465.7 600 300 600 0 465.7 0 300 134.3 0 300 0zm0 100c-45 0-81.4 36.4-81.4 81.4 0 16.6 5.1 32.1 13.8 45l67.6 97.1 67.6-97.1c8.7-12.9 13.8-28.4 13.8-45C381.4 136.4 345 100 300 100z"/>
+                </svg>
             </a>
-            <a href="https://www.etsy.com/shop/YourShopName" target="_blank" aria-label="Etsy">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M256 0C114.836 0 0 114.836 0 256s114.836 256 256 256 256-114.836 256-256S397.164 0 256 0zm75.5 381.5h-151v-31h82.5v-72.5h-68v-30h68V175h-82.5v-31h151v31h-68v72.5h68v30h-68V350.5h68v31z"/></svg>
+            <!-- Etsy -->
+            <a href="https://www.etsy.com/shop/ariadnaarranz" target="_blank" aria-label="Etsy">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+                    <path d="M256 0C114.836 0 0 114.836 0 256s114.836 256 256 256 256-114.836 256-256S397.164 0 256 0zm75.5 381.5h-151v-31h82.5v-72.5h-68v-30h68V175h-82.5v-31h151v31h-68v72.5h68v30h-68V350.5h68v31z"/>
+                </svg>
             </a>
+            <!-- Email -->
             <a href="mailto:you@example.com" aria-label="Email">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 13.065L0 6V4l12 7 12-7v2l-12 7.065zM0 8v12h24V8l-12 7L0 8z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 13.065L0 6V4l12 7 12-7v2l-12 7.065zM0 8v12h24V8l-12 7L0 8z"/>
+                </svg>
             </a>
         </div>
-        <p class="copyright">&copy; 2024 Your Name. All rights reserved.</p>
+
+        <p class="copyright">&copy; 2025 Ariadna Arranz. All rights reserved.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Scripts -->
+    <script src="js/script.js" defer></script>
 </body>
 </html>
