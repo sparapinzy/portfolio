@@ -3,14 +3,17 @@ name: Build & Deploy Minified Site
 on:
   push:
     branches:
-      - main  # Change if your default branch is different
+      - main  # or your default branch
+
+permissions:
+  contents: write
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Check out the repo
+      # 1. Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -34,13 +37,12 @@ jobs:
 
       # 5. Minify CSS
       - name: Minify CSS
-        run: cleancss -o build/css/style.min.css css/style.css
+        run: cleancss -o dist/css/style.min.css css/style.css
 
       # 6. Minify JS
-      - name: Minify JavaScript
-        run: terser js/script.js -o build/js/script.min.js -c -m
+        run: terser js/script.js -o dist/js/script.min.js -c -m
 
-      # 7. Update HTML to use minified files
+      # 7. Update HTML references
       - name: Update HTML references
         run: |
           find dist -name "*.html" -exec sed -i 's|css/style.css|css/style.min.css|g' {} +
