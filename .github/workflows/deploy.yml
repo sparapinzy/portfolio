@@ -27,17 +27,17 @@ jobs:
       # 4. Create dist folder and copy all files
       - name: Prepare dist folder
         run: |
-          mkdir dist
-          cp -R * dist/
-          mkdir -p dist/css dist/js
+          mkdir build
+          cp -R * build/
+          mkdir -p build/css build/js
 
       # 5. Minify CSS
       - name: Minify CSS
-        run: cleancss -o dist/css/style.min.css css/style.css
+        run: cleancss -o build/css/style.min.css css/style.css
 
       # 6. Minify JS
       - name: Minify JavaScript
-        run: terser js/script.js -o dist/js/script.min.js -c -m
+        run: terser js/script.js -o build/js/script.min.js -c -m
 
       # 7. Update HTML to use minified files
       - name: Update HTML references
