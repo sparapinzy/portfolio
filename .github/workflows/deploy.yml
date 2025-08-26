@@ -40,6 +40,7 @@ jobs:
         run: cleancss -o dist/css/style.min.css css/style.css
 
       # 6. Minify JS
+      - name: Minify JS
         run: terser js/script.js -o dist/js/script.min.js -c -m
 
       # 7. Update HTML references
