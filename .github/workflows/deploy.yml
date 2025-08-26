@@ -24,12 +24,13 @@ jobs:
       - name: Install CLI tools
         run: npm install -g clean-css-cli terser
 
-      # 4. Create dist folder and copy all files
+      # 4. Create dist folder and copy all files except dist itself
       - name: Prepare dist folder
         run: |
-          mkdir build
-          cp -R * build/
-          mkdir -p build/css build/js
+          mkdir dist
+          shopt -s extglob
+          cp -R !(dist) dist/
+          mkdir -p dist/css dist/js
 
       # 5. Minify CSS
       - name: Minify CSS
