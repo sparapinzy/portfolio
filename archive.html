@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ariadna Arranz - Home</title>
+  <title>Artwork Archive - Ariadna Arranz</title>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
-
   <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="header-left">
@@ -22,9 +21,9 @@
     </div>
     <div class="header-right">
       <nav class="site-nav">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="archive.html">Archive</a>
+        <a href="archive.html" class="active">Archive</a>
       </nav>
       <button id="theme-toggle" aria-label="Toggle light/dark mode">
         <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -35,18 +34,12 @@
   </header>
 
   <!-- ===== MAIN CONTENT ===== -->
+  <!-- MAIN -->
   <main>
-    <h2>Selected Works</h2>
-    <div class="carousel-wrapper">
-      <div class="carousel">
-        <div class="slides" id="featured-carousel"></div>
-        <button class="prev" aria-label="Previous slide">&#10094;</button>
-        <button class="next" aria-label="Next slide">&#10095;</button>
-      </div>
-    </div>
+    <h2>Artwork Archive</h2>
+    <div id="gallery" class="gallery-grid"></div>
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <!-- ================= FOOTER ================= -->
   <footer>
     <p>Connect with me:</p>
@@ -112,7 +105,18 @@
     </p>
   </footer>
 
+  <script src="js/archive.js" defer></script>
 
-  <script src="js/script.min.js" defer></script>
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <span class="lightbox-prev">&#10094;</span>
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="" alt="">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+  <span class="lightbox-next">&#10095;</span>
+</div>
+
 </body>
 </html>

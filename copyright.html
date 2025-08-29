@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ariadna Arranz - Home</title>
-  <link rel="stylesheet" href="css/style.min.css">
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copyright &amp; Usage - Ariadna Arranz</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.min.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
 <body>
-
-  <!-- ===== HEADER ===== -->
+  <!-- ================= HEADER ================= -->
   <header class="site-header">
     <div class="header-left">
       <a href="index.html" class="logo-link">
-        <img src="images/logo-light.svg" alt="Ariadna Arranz Logo" class="site-logo" id="site-logo">
+        <img
+          src=""
+          alt="Ariadna Arranz Logo"
+          class="site-logo"
+          id="site-logo"
+        />
       </a>
       <div class="site-text">
         <h1 class="site-title">Ariadna Arranz</h1>
@@ -22,31 +30,48 @@
     </div>
     <div class="header-right">
       <nav class="site-nav">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="archive.html">Archive</a>
+        <a href="copyright.html" class="active">Copyright</a>
       </nav>
       <button id="theme-toggle" aria-label="Toggle light/dark mode">
-        <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-             width="28" height="28" fill="none" stroke="currentColor"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+        <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Sun/Moon icon will be injected by JS -->
+        </svg>
       </button>
     </div>
   </header>
 
-  <!-- ===== MAIN CONTENT ===== -->
-  <main>
-    <h2>Selected Works</h2>
-    <div class="carousel-wrapper">
-      <div class="carousel">
-        <div class="slides" id="featured-carousel"></div>
-        <button class="prev" aria-label="Previous slide">&#10094;</button>
-        <button class="next" aria-label="Next slide">&#10095;</button>
-      </div>
-    </div>
+  <!-- ================= COPYRIGHT PAGE CONTENT ================= -->
+  <main id="copyright-page">
+    <h2>Copyright &amp; Usage Policy</h2>
+    <p>
+      All artworks, images, and text on this website are the intellectual property of 
+      <strong>Ariadna Arranz</strong> and are protected by international copyright laws.
+    </p>
+    <p>
+      You may not reproduce, copy, edit, publish, transmit, or upload any content from this site 
+      without prior written permission from the artist.
+    </p>
+    <p>
+      Limited sharing of images for non-commercial purposes (such as social media posts) is allowed 
+      <strong>only</strong> if proper credit is given and the work is not altered in any way.
+    </p>
+    <p>
+      <strong>Prohibition on AI Training:</strong>  
+      The artworks, images, and content on this site may <u>not</u> be used, in whole or in part, 
+      for the purposes of training, fine-tuning, or otherwise developing artificial intelligence (AI) systems, 
+      machine learning models, neural networks, or any similar technologies, without the explicit written 
+      consent of the artist.
+    </p>
+    <p>
+      For licensing inquiries, commissions, or permission requests, please contact me at:
+      <a href="mailto:aarranz@proton.me">aarranz at proton dot me</a>
+    </p>
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ================= FOOTER ================= -->
   <!-- ================= FOOTER ================= -->
   <footer>
     <p>Connect with me:</p>
@@ -112,7 +137,7 @@
     </p>
   </footer>
 
-
+  <!-- Scripts -->
   <script src="js/script.min.js" defer></script>
 </body>
 </html>

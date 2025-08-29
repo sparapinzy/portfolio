@@ -1,134 +1,173 @@
-/* ============================= */
-/* CAROUSEL FUNCTIONALITY */
-/* ============================= */
+/* =============================
+   LOAD CAROUSELS FROM artworks.json
+   ============================= */
+fetch('artworks.json')
+  .then(res => res.json())
+  .then(data => {
+    // Homepage - Featured works
+    if (document.getElementById('featured-carousel')) {
+      data.filter(a => a.featured).forEach(a => addSlide('featured-carousel', a));
+      initCarousel('featured-carousel');
+    }
 
-// Cache DOM elements
-const slidesContainer = document.querySelector('.slides');
-const slideFigures = document.querySelectorAll('.slides figure');
-const nextBtn = document.querySelector('.next');
-const prevBtn = document.querySelector('.prev');
-const logoLight = 'images/logo-light.svg';
-const logoDark = 'images/logo-dark.svg';
+    // Latest Works - newest 5
+    if (document.getElementById('latest-carousel')) {
+      data.sort((a, b) => b.year - a.year)
+          .slice(0, 5)
+          .forEach(a => addSlide('latest-carousel', a));
+      initCarousel('latest-carousel');
+    }
 
-let currentSlide = 0;
-const totalSlides = slideFigures.length;
-let slideInterval = setInterval(nextSlide, 4000); // Auto-slide every 4s
+    // Archive - all works
+    if (document.getElementById('all-carousel')) {
+      data.sort((a, b) => b.year - a.year)
+          .forEach(a => addSlide('all-carousel', a));
+      initCarousel('all-carousel');
+    }
+  })
+  .catch(err => console.error('Error loading artworks:', err));
 
-// Event listeners
-nextBtn.addEventListener('click', () => {
-    nextSlide();
-    resetInterval();
-});
+/* =============================
+   ADD SLIDE HELPER (with size support)
+   ============================= */
+function addSlide(id, art) {
+  const container = document.getElementById(id);
+  const fig = document.createElement('figure');
 
-prevBtn.addEventListener('click', () => {
-    prevSlide();
-    resetInterval();
-});
+  // Build caption string
+  let caption = `${art.title} — ${art.medium}`;
+  if (art.size) caption += ` — ${art.size}`;
+  caption += ` — ${art.year}`;
 
-// Next slide
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateCarousel();
+  fig.innerHTML = `
+    <img src="${art.image}" alt="${caption}">
+    <figcaption>${caption}</figcaption>
+  `;
+  container.appendChild(fig);
 }
 
-// Previous slide
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    updateCarousel();
+/* =============================
+   CAROUSEL FUNCTIONALITY
+   ============================= */
+function initCarousel(id) {
+  const slidesContainer = document.getElementById(id);
+  const carousel = slidesContainer.closest('.carousel');
+  const slides = slidesContainer.querySelectorAll('figure');
+
+  // Don't run if no slides
+  if (slides.length === 0) return;
+
+  const nextBtn = carousel.querySelector('.next');
+  const prevBtn = carousel.querySelector('.prev');
+
+  let current = 0;
+  let paused = false;
+  let interval = setInterval(next, 4000);
+
+  nextBtn.addEventListener('click', () => { next(); reset(); });
+  prevBtn.addEventListener('click', () => { prev(); reset(); });
+
+  // Pause/Play button
+  const pauseBtn = document.createElement('button');
+  pauseBtn.id = 'pause-carousel';
+  pauseBtn.classList.add('btn');
+  pauseBtn.textContent = '⏸';
+  carousel.appendChild(pauseBtn);
+
+  console.log("Pause button created");
+
+  pauseBtn.addEventListener('click', () => {
+    if (paused) {
+      interval = setInterval(next, 3000);
+      pauseBtn.textContent = '⏸';
+    } else {
+      clearInterval(interval);
+      pauseBtn.textContent = '▶';
+    }
+    paused = !paused;
+  });
+
+  function next() {
+    current = (current + 1) % slides.length;
+    update();
+  }
+
+  function prev() {
+    current = (current - 1 + slides.length) % slides.length;
+    update();
+  }
+
+  function update() {
+    slidesContainer.style.transform = `translateX(-${current * 100}%)`;
+  }
+
+  function reset() {
+    if (!paused) {
+      clearInterval(interval);
+      interval = setInterval(next, 4000);
+    }
+  }
+  
 }
 
-// Update carousel position
-function updateCarousel() {
-    slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-}
-
-// Reset auto-slide timer
-function resetInterval() {
-    clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, 4000);
-}
-
-/* ============================= */
-/* THEME TOGGLE + LOGO SWAP */
-/* ============================= */
-
+/* =============================
+   THEME TOGGLE + SUN/MOON ICON
+   ============================= */
 const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
 const siteLogo = document.getElementById('site-logo');
 
-// Smooth logo fade swap
-function switchLogo(newSrc) {
-    siteLogo.style.opacity = 0;
-    setTimeout(() => {
-        siteLogo.src = newSrc;
-        siteLogo.style.opacity = 1;
-    }, 200); // fade out for 0.2s, then swap
+const sunIcon = `
+  <circle cx="12" cy="12" r="5" fill="currentColor"/>
+  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
+`;
+
+const moonIcon = `
+  <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" fill="currentColor"/>
+`;
+
+function updateThemeIcon() {
+  if (!themeIcon) return;
+  if (document.body.classList.contains('dark-mode')) {
+    themeIcon.innerHTML = sunIcon;
+  } else {
+    themeIcon.innerHTML = moonIcon;
+  }
 }
 
-// Theme toggle functionality
 if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
 
-        if (document.body.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark');
-            themeToggle.textContent = '☀️';
-            switchLogo(logoDark);
-        } else {
-            localStorage.setItem('theme', 'light');
-            themeToggle.textContent = '🌙';
-            switchLogo(logoLight);
-        }
-    });
-
-    // Load saved theme preference on page load
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-        themeToggle.textContent = '☀️';
-        siteLogo.src = logoDark;
+    if (document.body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+      if (siteLogo) siteLogo.src = 'images/logo-dark.svg';
     } else {
-        siteLogo.src = logoLight;
+      localStorage.setItem('theme', 'light');
+      if (siteLogo) siteLogo.src = 'images/logo-light.svg';
     }
+    updateThemeIcon();
+  });
+
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    if (siteLogo) siteLogo.src = 'images/logo-dark.svg';
+  } else {
+    if (siteLogo) siteLogo.src = 'images/logo-light.svg';
+  }
+  updateThemeIcon();
 }
 
-/* ============================= */
-/* GOOGLE FONTS TOGGLE */
-/* ============================= */
-
-function setGoogleFont(fontName) {
-    // Remove any previously loaded Google Fonts
-    document.querySelectorAll('link[data-google-font]').forEach(link => link.remove());
-
-    // Create and append Google Fonts link
-    const link = document.createElement('link');
-    link.href = `https://fonts.googleapis.com/css2?family=${fontName.replace(/ /g, '+')}:wght@400;700&display=swap`;
-    link.rel = 'stylesheet';
-    link.setAttribute('data-google-font', fontName);
-    document.head.appendChild(link);
-
-    // Apply font to CSS variable
-    document.documentElement.style.setProperty('--font-family', `'${fontName}', sans-serif`);
+/* =============================
+   FOOTER DATE UPDATES
+   ============================= */
+const yearEl = document.getElementById('current-year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
 }
 
-function useSystemFont() {
-    // Remove any loaded Google Fonts
-    document.querySelectorAll('link[data-google-font]').forEach(link => link.remove());
-
-    // Reset to system sans-serif font stack
-    //document.documentElement.style.setProperty('--font-family', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif');
-
-    // Reset to system monospace font stack
-    document.documentElement.style.setProperty(
-        '--font-family',
-        'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
-    );
+const lastUpdatedEl = document.getElementById('last-updated');
+if (lastUpdatedEl) {
+  const lastUpdated = new Date(document.lastModified);
+  lastUpdatedEl.textContent = lastUpdated.toLocaleDateString();
 }
-
-/* ============================= */
-/* CHOOSE YOUR FONT MODE HERE */
-/* ============================= */
-
-// Option 1: Use Google Font
-//setGoogleFont('Montserrat');
-
-// Option 2: Use system fonts (super fast)
-useSystemFont();
