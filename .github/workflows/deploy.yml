@@ -3,7 +3,7 @@ name: Build & Deploy Minified Site
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main  # Change if your default branch is different
 
 permissions:
   contents: write
@@ -17,39 +17,48 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Set up Node.js
+      # 2. Cache Node.js dependencies for faster builds
+      - name: Cache Node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 3. Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      # 3. Install minifier tools
+      # 4. Install minifier tools
       - name: Install CLI tools
         run: npm install -g clean-css-cli terser
 
-      # 4. Create dist folder and copy all files except dist itself
+      # 5. Prepare dist folder (only copy necessary files)
       - name: Prepare dist folder
         run: |
           mkdir dist
           shopt -s extglob
-          cp -R !(dist) dist/
+          cp -R !(dist|.git|.github|node_modules) dist/
           mkdir -p dist/css dist/js
 
-      # 5. Minify CSS
+      # 6. Minify CSS
       - name: Minify CSS
         run: cleancss -o dist/css/style.min.css css/style.css
 
-      # 6. Minify JS
+      # 7. Minify JS
       - name: Minify JS
         run: terser js/script.js -o dist/js/script.min.js -c -m
 
-      # 7. Update HTML references
+      # 8. Update HTML references (cross-platform safe)
       - name: Update HTML references
         run: |
-          find dist -name "*.html" -exec sed -i 's|css/style.css|css/style.min.css|g' {} +
-          find dist -name "*.html" -exec sed -i 's|js/script.js|js/script.min.js|g' {} +
+          find dist -name "*.html" -type f -exec sed -i'' -e 's|css/style.css|css/style.min.css|g' {} +
+          find dist -name "*.html" -type f -exec sed -i'' -e 's|js/script.js|js/script.min.js|g' {} +
 
-      # 8. Deploy to GitHub Pages
+      # 9. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

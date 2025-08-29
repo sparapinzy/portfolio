@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Hand-Foot",
+    "year": 2025,
+    "medium": "Oil on canvas",
+    "image": "images/handfoot.JPG",
+    "size": "24x30 in",
+    "featured": true
+  },
+  {
+    "title": "Solvay 2027",
+    "year": 2025,
+    "medium": "Oil on canvas",
+    "image": "images/solvay2027.jpg",
+    "size": "45x33 in",
+    "featured": true
+  },
+  {
+    "title": "Living Room",
+    "year": 2024,
+    "medium": "Oil on canvas",
+    "image": "images/livingroom.jpg",
+    "size": "25x22 in",
+    "featured": true
+  },
+  {
+    "title": "East Milan",
+    "year": 2024,
+    "medium": "Oil on canvas",
+    "image": "images/milanoest.jpg",
+    "size": "36x24 in",
+    "featured": true
+  },
+  {
+    "title": "Self-Portrait",
+    "year": 2024,
+    "medium": "Oil on canvas",
+    "image": "images/ioconappunti.jpg",
+    "size": "22x28 in",
+    "featured": true
+  },
+  {
+    "title": "Album cover",
+    "year": 2023,
+    "medium": "Oil pastels on canvas",
+    "image": "images/stanzasolidi.jpg",
+    "size": "100x81 cm",
+    "featured": false
+  },
+  {
+    "title": "RGB",
+    "year": 2023,
+    "medium": "Colored pencil on paper",
+    "image": "images/rgb.jpg",
+    "size": "14x11 in",
+    "featured": false
+  },
+  {
+    "title": "Natalia's Callas",
+    "year": 2024,
+    "medium": "Oil on canvas",
+    "image": "images/calle.jpg",
+    "size": "16x20 in",
+    "featured": false
+  },
+  {
+    "title": "Perspective",
+    "year": 2023,
+    "medium": "Mixed media on paper",
+    "image": "images/perspective.jpg",
+    "size": "100x81 cm",
+    "featured": false
+  },
+  {
+    "title": "Toilet",
+    "year": 2024,
+    "medium": "Graphite on paper",
+    "image": "images/toilet.jpg",
+    "size": "9x11 in",
+    "featured": false
+  },
+  {
+    "title": "Sala",
+    "year": 2022,
+    "medium": "Colored pencil on cardboaerd",
+    "image": "images/sala.jpg",
+    "size": "100x81 cm",
+    "featured": false
+  },
+  {
+    "title": "Blue Frame",
+    "year": 2025,
+    "medium": "Oil on paper",
+    "image": "images/corniceblu.jpg",
+    "size": "14.5x11.5 in",
+    "featured": false
+  },
+  {
+    "title": "Buzzati",
+    "year": 2024,
+    "medium": "Graphite on paper",
+    "image": "images/giaccavivente.JPG",
+    "size": "14x18 in",
+    "featured": false
+  },
+  {
+    "title": "On Van Ness",
+    "year": 2024,
+    "medium": "Watercolors on paper",
+    "image": "images/burgervanness.jpg",
+    "size": "8x12 in",
+    "featured": false
+  },
+  {
+    "title": "Monster",
+    "year": 2022,
+    "medium": "Acrylic on paper",
+    "image": "images/monster1.JPG",
+    "size": "13x13 in",
+    "featured": false
+  }
+]
