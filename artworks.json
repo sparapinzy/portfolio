@@ -1,5 +1,4 @@
-[
-  {
+[  {
     "title": "Hand-Foot",
     "year": 2025,
     "medium": "Oil on canvas",
@@ -39,6 +38,31 @@
     "size": "22x28 in",
     "featured": true
   },
+    {
+    "title": "Self-Portrait",
+    "year": 2025,
+    "medium": "Oil on canvas",
+    "image": "images/selfportraitovalglassbefore.jpg",
+    "size": "?x? in",
+    "featured": true
+  },
+  {
+    "title": "Pinza Smaglia Catena",
+    "year": 2025,
+    "medium": "Oil on canvas",
+    "image": "images/pinzasmagliacatena.jpg",
+    "size": "?x? in",
+    "featured": true
+  },
+  {
+    "title": "Piedone",
+    "year": 2025,
+    "medium": "Oil on canvas",
+    "image": "images/piedone.jpg",
+    "size": "?x? in",
+    "featured": false
+  },
+
   {
     "title": "Album cover",
     "year": 2023,
@@ -81,7 +105,7 @@
   },
   {
     "title": "Sala",
-    "year": 2022,
+    "year": 2021,
     "medium": "Colored pencil on cardboaerd",
     "image": "images/sala.jpg",
     "size": "100x81 cm",
@@ -116,6 +140,83 @@
     "year": 2022,
     "medium": "Acrylic on paper",
     "image": "images/monster1.JPG",
+    "size": "13x13 in",
+    "featured": false
+  },
+  {
+    "title": "Fork Death",
+    "year": 2025,
+    "medium": "Mixed media on paper",
+    "image": "images/forkdeath.jpg",
+    "size": "13x13 in",
+    "featured": false
+  },
+  {
+    "title": "I really do love him",
+    "year": 2024,
+    "medium": "Mixed media on paper",
+    "image": "images/ilovemygodson.jpg",
+    "size": "13x13 in",
+    "featured": false
+  }
+,
+  {
+    "title": "Saint Mary Magdalen",
+    "year": 2025,
+    "medium": "Mixed media on paper",
+    "image": "images/mariamaddalenanonquelladicrivelli.jpg",
+    "size": "13x13 in",
+    "featured": false
+  }
+,
+  {
+    "title": "Cip Colore",
+    "year": 2025,
+    "medium": "Mixed media on paper",
+    "image": "images/giocata.jpg",
+    "size": "13x13 in",
+    "featured": false
+  }
+,
+  {
+    "title": "Pacifico",
+    "year": 2024,
+    "medium": "Mixed media on paper",
+    "image": "images/roundcantopview.jpg",
+    "size": "13x13 in",
+    "featured": false
+  }
+,
+  {
+    "title": "Hear Hear",
+    "year": 2025,
+    "medium": "Oil on paper",
+    "image": "images/ears.JPG ",
+    "size": "13x13 in",
+    "featured": false
+  }
+,
+  {
+    "title": "Simona",
+    "year": 2022,
+    "medium": "Watercolors on paper",
+    "image": "images/handwithspoon.JPG ",
+    "size": "13x13 in",
+    "featured": false
+  },
+  {
+    "title": "Chapa",
+    "year": 2023,
+    "medium": "Oil on canvas",
+    "image": "images/handwithapple.JPG ",
+    "size": "13x13 in",
+    "featured": false
+  },
+  {
+    "title": "Invisible Ink",
+    "year": 2023,
+    "medium": "Oil on canvas",
+    "image": "images/handwithpencil.JPG ",
     "size": "13x13 in",
     "featured": false
   }
