@@ -38,7 +38,7 @@ body.dark-mode {
   --footer-text: #fff;
   --button-bg: #1a1a1a;
   --button-text: #fff;
-  --button-hover-bg: #ffcc00;
+  --button-hover-bg: #c0c0c0;
   --button-hover-text: #1a1a1a;
   --carousel-bg: #1a1a1a;
   --caption-color: #fff;
@@ -199,38 +199,20 @@ figcaption {
   }
 }
 
-/* Carousel nav buttons */
+
+/* ============================= */
+/* Carousel BUTTON */
+/* ============================= */
+/* Shared carousel control style */
 .prev,
-.next {
-  position: absolute;
-  top: 50%;
-  /*transform: translateY(-50%);*/
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 24px;
-  z-index: 2;
-}
-
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
-/* ============================= */
-/* PAUSE/PLAY BUTTON */
-/* ============================= */
+.next,
 #pause-carousel {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 20%;
   font-size: 18px;
   cursor: pointer;
   z-index: 5;
@@ -240,10 +222,44 @@ figcaption {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#pause-carousel:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  transform: scale(1.1); /* same hover pop as arrows */
+
+
+/* Positioning */
+.prev {
+  position: absolute;
+  top: 50%;
+  left: 10px;
 }
+
+.next {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+}
+
+#pause-carousel {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* Shared hover effect */
+.prev:hover,
+.next:hover,
+#pause-carousel:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  transform: scale(1.1);
+}
+
+/* Always show arrows on mobile */
+@media (max-width: 600px) {
+  .prev,
+  .next {
+    opacity: 1;
+  }
+}
+
 
 /* ============================= */
 /* FOOTER */
@@ -311,7 +327,6 @@ footer .copyright {
   text-decoration: none;
   transition: background 0.3s, transform 0.2s;
 }
-
 .contact-btn:hover {
   background: var(--button-hover-bg);
   color: var(--button-hover-text);
@@ -381,10 +396,6 @@ body.dark-mode figcaption {
   }
   .prev,
   .next {
-    opacity: 0;
-  }
-  .carousel:active .prev,
-  .carousel:active .next {
     opacity: 1;
   }
 }
@@ -619,3 +630,4 @@ body.dark-mode a[role="button"]:hover {
   color: var(--caption-color);
   text-align: center;
 }
+

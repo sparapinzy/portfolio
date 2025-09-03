@@ -52,33 +52,67 @@ function addSlide(id, art) {
 function initCarousel(id) {
   const slidesContainer = document.getElementById(id);
   const carousel = slidesContainer.closest('.carousel');
-  const slides = slidesContainer.querySelectorAll('figure');
+  let slides = slidesContainer.querySelectorAll('figure');
 
-  // Don't run if no slides
   if (slides.length === 0) return;
+
+  // Clone first and last slides for smooth looping
+  const firstClone = slides[0].cloneNode(true);
+  const lastClone = slides[slides.length - 1].cloneNode(true);
+
+  firstClone.id = 'first-clone';
+  lastClone.id = 'last-clone';
+
+  slidesContainer.appendChild(firstClone);
+  slidesContainer.insertBefore(lastClone, slides[0]);
+
+  slides = slidesContainer.querySelectorAll('figure');
+
+  let current = 1; // Start at first real slide
+  const size = slides[current].clientWidth;
+
+  slidesContainer.style.transform = `translateX(${-size * current}px)`;
 
   const nextBtn = carousel.querySelector('.next');
   const prevBtn = carousel.querySelector('.prev');
+  const pauseBtn = document.getElementById('pause-carousel');
 
-  let current = 0;
   let paused = false;
   let interval = setInterval(next, 4000);
+
+  function next() {
+    if (current >= slides.length - 1) return;
+    current++;
+    slidesContainer.style.transition = "transform 0.5s ease-in-out";
+    slidesContainer.style.transform = `translateX(${-size * current}px)`;
+  }
+
+  function prev() {
+    if (current <= 0) return;
+    current--;
+    slidesContainer.style.transition = "transform 0.5s ease-in-out";
+    slidesContainer.style.transform = `translateX(${-size * current}px)`;
+  }
+
+  slidesContainer.addEventListener('transitionend', () => {
+    if (slides[current].id === 'first-clone') {
+      slidesContainer.style.transition = "none";
+      current = 1;
+      slidesContainer.style.transform = `translateX(${-size * current}px)`;
+    }
+    if (slides[current].id === 'last-clone') {
+      slidesContainer.style.transition = "none";
+      current = slides.length - 2;
+      slidesContainer.style.transform = `translateX(${-size * current}px)`;
+    }
+  });
 
   nextBtn.addEventListener('click', () => { next(); reset(); });
   prevBtn.addEventListener('click', () => { prev(); reset(); });
 
-  // Pause/Play button
-  const pauseBtn = document.createElement('button');
-  pauseBtn.id = 'pause-carousel';
-  pauseBtn.classList.add('btn');
-  pauseBtn.textContent = '⏸';
-  carousel.appendChild(pauseBtn);
-
-  console.log("Pause button created");
-
   pauseBtn.addEventListener('click', () => {
     if (paused) {
-      interval = setInterval(next, 3000);
+      interval = setInterval(next, 2000);
       pauseBtn.textContent = '⏸';
     } else {
       clearInterval(interval);
@@ -87,29 +121,20 @@ function initCarousel(id) {
     paused = !paused;
   });
 
-  function next() {
-    current = (current + 1) % slides.length;
-    update();
-  }
-
-  function prev() {
-    current = (current - 1 + slides.length) % slides.length;
-    update();
-  }
-
-  function update() {
-    slidesContainer.style.transform = `translateX(-${current * 100}%)`;
-  }
-
   function reset() {
     if (!paused) {
       clearInterval(interval);
-      interval = setInterval(next, 4000);
+      interval = setInterval(next, 2000);
     }
   }
-  
-}
 
+  // Handle window resize (recalculate slide width)
+  window.addEventListener('resize', () => {
+    const newSize = slides[current].clientWidth;
+    slidesContainer.style.transition = "none";
+    slidesContainer.style.transform = `translateX(${-newSize * current}px)`;
+  });
+}
 /* =============================
    THEME TOGGLE + SUN/MOON ICON
    ============================= */
