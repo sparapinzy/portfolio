@@ -38,9 +38,8 @@ function addSlide(id, art) {
   let caption = `${art.title} — ${art.medium}`;
   if (art.size) caption += ` — ${art.size}`;
   caption += ` — ${art.year}`;
-
   fig.innerHTML = `
-    <img src="${art.image}" alt="${caption}">
+    <img src="${art.image}" alt="${caption}" loading="lazy">
     <figcaption>${caption}</figcaption>
   `;
   container.appendChild(fig);
@@ -136,7 +135,21 @@ function initCarousel(id) {
   });
 
   /* =============================
-     NEW: TOUCH SWIPE FUNCTIONALITY
+     NEW: KEYBOARD NAVIGATION
+     ============================= */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      next();
+      reset();
+    }
+    if (e.key === 'ArrowLeft') {
+      prev();
+      reset();
+    }
+  });
+
+  /* =============================
+     TOUCH SWIPE FUNCTIONALITY
      ============================= */
   let startX = 0;
   let endX = 0;
