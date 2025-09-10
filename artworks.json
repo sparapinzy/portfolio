@@ -51,7 +51,7 @@
     "year": 2025,
     "medium": "Oil on canvas",
     "image": "images/pinzasmagliacatena.jpg",
-    "size": "?x? in",
+    "size": "12x17 in",
     "featured": true
   },
   {
@@ -59,7 +59,7 @@
     "year": 2025,
     "medium": "Oil on canvas",
     "image": "images/piedone.jpg",
-    "size": "?x? in",
+    "size": "12x22 in",
     "featured": false
   },
 
@@ -68,7 +68,7 @@
     "year": 2023,
     "medium": "Oil pastels on canvas",
     "image": "images/stanzasolidi.jpg",
-    "size": "100x81 cm",
+    "size": "20x16 cm",
     "featured": false
   },
   {
@@ -92,7 +92,7 @@
     "year": 2023,
     "medium": "Mixed media on paper",
     "image": "images/perspective.jpg",
-    "size": "100x81 cm",
+    "size": "14x11 cm",
     "featured": false
   },
   {
@@ -148,7 +148,7 @@
     "year": 2025,
     "medium": "Mixed media on paper",
     "image": "images/forkdeath.jpg",
-    "size": "13x13 in",
+    "size": "?x? in",
     "featured": false
   },
   {
@@ -156,16 +156,16 @@
     "year": 2024,
     "medium": "Mixed media on paper",
     "image": "images/ilovemygodson.jpg",
-    "size": "13x13 in",
+    "size": "3x3 in",
     "featured": false
   }
 ,
   {
-    "title": "Saint Mary Magdalen",
+    "title": "Saint Mary Magdalene",
     "year": 2025,
     "medium": "Mixed media on paper",
     "image": "images/mariamaddalenanonquelladicrivelli.jpg",
-    "size": "13x13 in",
+    "size": "?x? in",
     "featured": false
   }
 ,
@@ -174,7 +174,7 @@
     "year": 2025,
     "medium": "Mixed media on paper",
     "image": "images/giocata.jpg",
-    "size": "13x13 in",
+    "size": "16x12 in",
     "featured": false
   }
 ,
@@ -183,7 +183,7 @@
     "year": 2024,
     "medium": "Mixed media on paper",
     "image": "images/roundcantopview.jpg",
-    "size": "13x13 in",
+    "size": "⌀7 in",
     "featured": false
   }
 ,
@@ -192,7 +192,7 @@
     "year": 2025,
     "medium": "Oil on paper",
     "image": "images/ears.JPG ",
-    "size": "13x13 in",
+    "size": "8x10 in",
     "featured": false
   }
 ,
@@ -209,7 +209,7 @@
     "year": 2023,
     "medium": "Oil on canvas",
     "image": "images/handwithapple.JPG ",
-    "size": "13x13 in",
+    "size": "16x12 in",
     "featured": false
   },
   {
@@ -217,7 +217,7 @@
     "year": 2023,
     "medium": "Oil on canvas",
     "image": "images/handwithpencil.JPG ",
-    "size": "13x13 in",
+    "size": "16x12 in",
     "featured": false
   }
 ]
