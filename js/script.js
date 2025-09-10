@@ -134,6 +134,30 @@ function initCarousel(id) {
     slidesContainer.style.transition = "none";
     slidesContainer.style.transform = `translateX(${-newSize * current}px)`;
   });
+
+  /* =============================
+     NEW: TOUCH SWIPE FUNCTIONALITY
+     ============================= */
+  let startX = 0;
+  let endX = 0;
+
+  slidesContainer.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  slidesContainer.addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 50) { // Minimum swipe distance
+      if (diff > 0) {
+        next(); // swipe left → next
+      } else {
+        prev(); // swipe right → prev
+      }
+      reset();
+    }
+  });
 }
 /* =============================
    THEME TOGGLE + SUN/MOON ICON
