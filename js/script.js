@@ -111,11 +111,13 @@ function initCarousel(id) {
 
   pauseBtn.addEventListener('click', () => {
     if (paused) {
-      interval = setInterval(next, 2000);
-      pauseBtn.textContent = '⏸';
+      interval = setInterval(next, 4000);
+      // Show pause icon (two rectangles)
+      pauseBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
     } else {
       clearInterval(interval);
-      pauseBtn.textContent = '▶';
+      // Show play icon (triangle)
+      pauseBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
     }
     paused = !paused;
   });
