@@ -1,120 +1,196 @@
 let artworks = [];
-let currentIndex = 0;
+let projects = {};
 
 fetch('artworks.json')
   .then(res => res.json())
   .then(data => {
     artworks = data.sort((a, b) => b.year - a.year);
 
-    const gallery = document.getElementById('gallery');
-
-    artworks.forEach((art, index) => {
-      const item = document.createElement('div');
-      item.classList.add('gallery-item');
-
-      item.innerHTML = `
-        <img src="${art.image}" alt="${art.title}">
-        <div class="caption">
-          <strong>${art.title}</strong> (${art.year})<br>
-          <small>${art.medium}${art.size ? ` — ${art.size}` : ''}</small>
-        </div>
-      `;
-
-      // Open lightbox on click
-      item.addEventListener('click', () => {
-        openLightbox(index);
-      });
-
-      gallery.appendChild(item);
+    // Group artworks by project
+    artworks.forEach(art => {
+      const projectName = art.project || 'Work';
+      if (!projects[projectName]) {
+        projects[projectName] = [];
+      }
+      projects[projectName].push(art);
     });
+
+    // Display projects on archive page
+    const projectsGrid = document.getElementById('projects-grid');
+    if (projectsGrid) {
+      Object.keys(projects).sort().forEach(projectName => {
+        const projectArtworks = projects[projectName];
+        const previewImage = projectArtworks[0].image; // Use first image as preview
+        
+        const projectCard = document.createElement('a');
+        const projectSlug = projectName.toLowerCase().replace(/\s+/g, '-');
+        projectCard.href = `project-${projectSlug}.html`;
+        projectCard.classList.add('project-card');
+        
+        projectCard.innerHTML = `
+          <img src="${previewImage}" alt="${projectName}" class="project-card-image">
+          <div class="project-card-info">
+            <h3 class="project-card-title">${projectName}</h3>
+          </div>
+        `;
+        
+        projectsGrid.appendChild(projectCard);
+      });
+    }
+
+    // Display artworks in gallery (for project pages)
+    const gallery = document.getElementById('gallery');
+    if (gallery) {
+      const projectName = getProjectNameFromURL();
+      const projectArtworks = projects[projectName] || [];
+      
+      projectArtworks.forEach((art, index) => {
+        const item = document.createElement('div');
+        item.classList.add('gallery-item');
+
+        item.innerHTML = `
+          <img src="${art.image}" alt="${art.title}">
+          <div class="caption">
+            <strong>${art.title}</strong> (${art.year})<br>
+            <small>${art.medium}${art.size ? ` — ${art.size}` : ''}</small>
+          </div>
+        `;
+
+        item.addEventListener('click', () => {
+          openLightbox(projectArtworks, index);
+        });
+
+        gallery.appendChild(item);
+      });
+    }
   })
   .catch(err => console.error('Error loading artworks:', err));
 
+function getProjectNameFromURL() {
+  const url = window.location.pathname;
+  const match = url.match(/project-([^.]+)\.html/);
+  if (match) {
+    const projectSlug = match[1];
+    // Handle special cases
+    if (projectSlug === 'empty-spaces') {
+      return 'Empty spaces';
+    }
+    if (projectSlug === 'loose-works') {
+      return 'Loose Works';
+    }
+    // Convert slug to project name
+    return projectSlug.split('-').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
+  }
+  return null;
+}
+
 // Lightbox elements
 const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const lightboxCaption = document.getElementById('lightbox-caption');
-const lightboxClose = document.querySelector('.lightbox-close');
-const lightboxPrev = document.querySelector('.lightbox-prev');
-const lightboxNext = document.querySelector('.lightbox-next');
+let currentArtworks = [];
+let currentIndex = 0;
 
-function openLightbox(index) {
-  currentIndex = index;
-  updateLightbox();
-  lightbox.style.display = 'flex';
-}
+if (lightbox) {
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxClose = document.querySelector('.lightbox-close');
+  const lightboxPrev = document.querySelector('.lightbox-prev');
+  const lightboxNext = document.querySelector('.lightbox-next');
 
-function closeLightbox() {
-  lightbox.style.display = 'none';
-}
-
-function showPrev() {
-  currentIndex = (currentIndex - 1 + artworks.length) % artworks.length;
-  updateLightbox();
-}
-
-function showNext() {
-  currentIndex = (currentIndex + 1) % artworks.length;
-  updateLightbox();
-}
-
-function updateLightbox() {
-  const art = artworks[currentIndex];
-  lightboxImg.src = art.image;
-  lightboxCaption.innerHTML = `
-    <strong>${art.title}</strong> (${art.year})<br>
-    <small>${art.medium}${art.size ? ` — ${art.size}` : ''}</small>
-  `;
-}
-
-// Event listeners
-lightboxClose.addEventListener('click', closeLightbox);
-lightboxPrev.addEventListener('click', showPrev);
-lightboxNext.addEventListener('click', showNext);
-
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) {
-    closeLightbox();
+  function openLightbox(artworks, index) {
+    currentArtworks = artworks;
+    currentIndex = index;
+    updateLightbox();
+    lightbox.style.display = 'flex';
   }
-});
 
-// Keyboard navigation for lightbox
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeLightbox();
-  } else if (e.key === 'ArrowLeft') {
-    showPrev();
-  } else if (e.key === 'ArrowRight') {
-    showNext();
+  function closeLightbox() {
+    lightbox.style.display = 'none';
   }
-});
 
-/* =============================
-   NEW: TOUCH SWIPE FUNCTIONALITY FOR LIGHTBOX
-   ============================= */
-let startX = 0;
-let endX = 0;
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + currentArtworks.length) % currentArtworks.length;
+    updateLightbox();
+  }
 
-lightbox.addEventListener('touchstart', (e) => {
-  startX = e.touches[0].clientX;
-});
+  function showNext() {
+    currentIndex = (currentIndex + 1) % currentArtworks.length;
+    updateLightbox();
+  }
 
-lightbox.addEventListener('touchend', (e) => {
-  endX = e.changedTouches[0].clientX;
-  const diff = startX - endX;
+  function updateLightbox() {
+    if (currentArtworks.length === 0) return;
+    const art = currentArtworks[currentIndex];
+    lightboxImg.src = art.image;
+    lightboxCaption.innerHTML = `
+      <strong>${art.title}</strong> (${art.year})<br>
+      <small>${art.medium}${art.size ? ` — ${art.size}` : ''}</small>
+    `;
+  }
 
-  if (Math.abs(diff) > 50) { // Minimum swipe distance
-    if (diff > 0) {
-      showNext(); // swipe left → next
-    } else {
-      showPrev(); // swipe right → prev
+  // Event listeners
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+  if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', showPrev);
+  }
+  if (lightboxNext) {
+    lightboxNext.addEventListener('click', showNext);
+  }
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
     }
-  }
-});
+  });
+
+  // Keyboard navigation for lightbox
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display === 'flex') {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        showPrev();
+      } else if (e.key === 'ArrowRight') {
+        showNext();
+      }
+    }
+  });
+
+  // Touch swipe functionality for lightbox
+  let startX = 0;
+  let endX = 0;
+
+  lightbox.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  lightbox.addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        showNext();
+      } else {
+        showPrev();
+      }
+    }
+  });
+}
 
 // Footer dates
-document.getElementById('current-year').textContent = new Date().getFullYear();
-document.getElementById('last-updated').textContent = new Date(document.lastModified).toLocaleDateString();
+const yearEl = document.getElementById('current-year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
+
+const lastUpdatedEl = document.getElementById('last-updated');
+if (lastUpdatedEl) {
+  lastUpdatedEl.textContent = new Date(document.lastModified).toLocaleDateString();
+}
 
 /* =============================
    THEME TOGGLE + SUN/MOON ICON

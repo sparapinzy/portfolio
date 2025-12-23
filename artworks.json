@@ -1,10 +1,12 @@
-[  {
+[
+  {
     "title": "Hand-Foot",
     "year": 2025,
     "medium": "Oil on canvas",
     "image": "images/handfoot.JPG",
     "size": "24x30 in",
-    "featured": true
+    "featured": true,
+    "project": "Anatomy"
   },
   {
     "title": "Solvay 2027",
@@ -12,7 +14,8 @@
     "medium": "Oil on canvas",
     "image": "images/solvay2027.jpg",
     "size": "45x33 in",
-    "featured": true
+    "featured": true,
+    "project": "Work"
   },
   {
     "title": "Living Room",
@@ -20,7 +23,8 @@
     "medium": "Oil on canvas",
     "image": "images/livingroom.jpg",
     "size": "25x22 in",
-    "featured": true
+    "featured": true,
+    "project": "Empty spaces"
   },
   {
     "title": "East Milan",
@@ -28,7 +32,8 @@
     "medium": "Oil on canvas",
     "image": "images/milanoest.jpg",
     "size": "36x24 in",
-    "featured": true
+    "featured": true,
+    "project": "Empty spaces"
   },
   {
     "title": "Self-Portrait",
@@ -36,15 +41,17 @@
     "medium": "Oil on canvas",
     "image": "images/ioconappunti.jpg",
     "size": "22x28 in",
-    "featured": true
+    "featured": true,
+    "project": "Work"
   },
-    {
+  {
     "title": "Self-Portrait",
     "year": 2025,
     "medium": "Oil on canvas",
     "image": "images/selfportraitovalglassbefore.jpg",
     "size": "?x? in",
-    "featured": true
+    "featured": true,
+    "project": "Work"
   },
   {
     "title": "Pinza Smaglia Catena",
@@ -52,7 +59,8 @@
     "medium": "Oil on canvas",
     "image": "images/pinzasmagliacatena.jpg",
     "size": "12x17 in",
-    "featured": true
+    "featured": true,
+    "project": "Work"
   },
   {
     "title": "Piedone",
@@ -60,16 +68,17 @@
     "medium": "Oil on canvas",
     "image": "images/piedone.jpg",
     "size": "12x22 in",
-    "featured": false
+    "featured": false,
+    "project": "Work"
   },
-
   {
     "title": "Album cover",
     "year": 2023,
     "medium": "Oil pastels on canvas",
     "image": "images/stanzasolidi.jpg",
     "size": "20x16 cm",
-    "featured": false
+    "featured": false,
+    "project": "Work"
   },
   {
     "title": "RGB",
@@ -77,7 +86,8 @@
     "medium": "Colored pencil on paper",
     "image": "images/rgb.jpg",
     "size": "14x11 in",
-    "featured": false
+    "featured": false,
+    "project": "Work"
   },
   {
     "title": "Natalia's Callas",
@@ -85,7 +95,8 @@
     "medium": "Oil on canvas",
     "image": "images/calle.jpg",
     "size": "16x20 in",
-    "featured": false
+    "featured": false,
+    "project": "Queens"
   },
   {
     "title": "Perspective",
@@ -93,7 +104,8 @@
     "medium": "Mixed media on paper",
     "image": "images/perspective.jpg",
     "size": "14x11 cm",
-    "featured": false
+    "featured": false,
+    "project": "Empty spaces"
   },
   {
     "title": "Toilet",
@@ -101,15 +113,17 @@
     "medium": "Graphite on paper",
     "image": "images/toilet.jpg",
     "size": "9x11 in",
-    "featured": false
+    "featured": false,
+    "project": "Empty spaces"
   },
   {
     "title": "Sala",
     "year": 2021,
-    "medium": "Colored pencil on cardboaerd",
+    "medium": "Colored pencil on cardboard",
     "image": "images/sala.jpg",
     "size": "100x81 cm",
-    "featured": false
+    "featured": false,
+    "project": "Empty spaces"
   },
   {
     "title": "Blue Frame",
@@ -117,7 +131,8 @@
     "medium": "Oil on paper",
     "image": "images/corniceblu.jpg",
     "size": "14.5x11.5 in",
-    "featured": false
+    "featured": false,
+    "project": "Work"
   },
   {
     "title": "Buzzati",
@@ -125,7 +140,8 @@
     "medium": "Graphite on paper",
     "image": "images/giaccavivente.JPG",
     "size": "14x18 in",
-    "featured": false
+    "featured": false,
+    "project": "Work"
   },
   {
     "title": "On Van Ness",
@@ -133,7 +149,8 @@
     "medium": "Watercolors on paper",
     "image": "images/burgervanness.jpg",
     "size": "8x12 in",
-    "featured": false
+    "featured": false,
+    "project": "Empty spaces"
   },
   {
     "title": "Monster",
@@ -141,7 +158,8 @@
     "medium": "Acrylic on paper",
     "image": "images/monster1.JPG",
     "size": "13x13 in",
-    "featured": false
+    "featured": false,
+    "project": "Monsters"
   },
   {
     "title": "Fork Death",
@@ -149,7 +167,8 @@
     "medium": "Mixed media on paper",
     "image": "images/forkdeath.jpg",
     "size": "?x? in",
-    "featured": false
+    "featured": false,
+    "project": "Work"
   },
   {
     "title": "I really do love him",
@@ -157,67 +176,70 @@
     "medium": "Mixed media on paper",
     "image": "images/ilovemygodson.jpg",
     "size": "3x3 in",
-    "featured": false
-  }
-,
+    "featured": false,
+    "project": "Work"
+  },
   {
     "title": "Saint Mary Magdalene",
     "year": 2025,
     "medium": "Mixed media on paper",
     "image": "images/mariamaddalenanonquelladicrivelli.jpg",
     "size": "?x? in",
-    "featured": false
-  }
-,
+    "featured": false,
+    "project": "Queens"
+  },
   {
     "title": "Cip Colore",
     "year": 2025,
     "medium": "Mixed media on paper",
     "image": "images/giocata.jpg",
     "size": "16x12 in",
-    "featured": false
-  }
-,
+    "featured": false,
+    "project": "Work"
+  },
   {
     "title": "Pacifico",
     "year": 2024,
     "medium": "Mixed media on paper",
     "image": "images/roundcantopview.jpg",
     "size": "⌀7 in",
-    "featured": false
-  }
-,
+    "featured": false,
+    "project": "Empty spaces"
+  },
   {
     "title": "Hear Hear",
     "year": 2025,
     "medium": "Oil on paper",
-    "image": "images/ears.JPG ",
+    "image": "images/ears.JPG",
     "size": "8x10 in",
-    "featured": false
-  }
-,
+    "featured": false,
+    "project": "Anatomy"
+  },
   {
     "title": "Simona",
     "year": 2022,
     "medium": "Watercolors on paper",
-    "image": "images/handwithspoon.JPG ",
+    "image": "images/handwithspoon.JPG",
     "size": "13x13 in",
-    "featured": false
+    "featured": false,
+    "project": "Anatomy"
   },
   {
     "title": "Chapa",
     "year": 2023,
     "medium": "Oil on canvas",
-    "image": "images/handwithapple.JPG ",
+    "image": "images/handwithapple.JPG",
     "size": "16x12 in",
-    "featured": false
+    "featured": false,
+    "project": "Anatomy"
   },
   {
     "title": "Invisible Ink",
     "year": 2023,
     "medium": "Oil on canvas",
-    "image": "images/handwithpencil.JPG ",
+    "image": "images/handwithpencil.JPG",
     "size": "16x12 in",
-    "featured": false
+    "featured": false,
+    "project": "Anatomy"
   }
 ]
