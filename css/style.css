@@ -567,7 +567,7 @@ body.dark-mode a[role="button"]:hover {
 /* ============================= */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   gap: 2.5rem;
   padding: 2rem;
   max-width: 1400px;
