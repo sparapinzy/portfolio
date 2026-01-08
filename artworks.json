@@ -1,4 +1,22 @@
-[
+[ 
+  {
+    "title": "Lady Injustice",
+    "year": 2025,
+    "medium": "Oil on canvas",
+    "image": "images/lady_injustice.jpg",
+    "size": "72x40 in",
+    "featured": true,
+    "project": "Queens"
+  },
+  {
+    "title": "Nonna in bagno che fuma",
+    "year": 2025,
+    "medium": "Oil on linen",
+    "image": "images/nonnainbagnochefuma.jpg",
+    "size": "40x55 in",
+    "featured": true,
+    "project": "Queens"
+  },
   {
     "title": "Hand-Foot",
     "year": 2025,
@@ -6,7 +24,7 @@
     "image": "images/handfoot.JPG",
     "size": "24x30 in",
     "featured": true,
-    "project": "Anatomy"
+    "project": "Quirks"
   },
   {
     "title": "Solvay 2027",
@@ -15,7 +33,16 @@
     "image": "images/solvay2027.jpg",
     "size": "45x33 in",
     "featured": true,
-    "project": "Work"
+    "project": "Statements"
+  },
+  {
+    "title": "Monster",
+    "year": 2022,
+    "medium": "Acrylic on paper",
+    "image": "images/monster1.JPG",
+    "size": "13x13 in",
+    "featured": true,
+    "project": "Therapies"
   },
   {
     "title": "Living Room",
@@ -24,7 +51,7 @@
     "image": "images/livingroom.jpg",
     "size": "25x22 in",
     "featured": true,
-    "project": "Empty spaces"
+    "project": "Therapies"
   },
   {
     "title": "East Milan",
@@ -33,7 +60,7 @@
     "image": "images/milanoest.jpg",
     "size": "36x24 in",
     "featured": true,
-    "project": "Empty spaces"
+    "project": "Therapies"
   },
   {
     "title": "Self-Portrait",
@@ -42,7 +69,7 @@
     "image": "images/ioconappunti.jpg",
     "size": "22x28 in",
     "featured": true,
-    "project": "Work"
+    "project": "Therapies"
   },
   {
     "title": "Self-Portrait",
@@ -50,8 +77,8 @@
     "medium": "Oil on canvas",
     "image": "images/selfportraitovalglassbefore.jpg",
     "size": "?x? in",
-    "featured": true,
-    "project": "Work"
+    "featured": false,
+    "project": "Therapies"
   },
   {
     "title": "Pinza Smaglia Catena",
@@ -59,8 +86,26 @@
     "medium": "Oil on canvas",
     "image": "images/pinzasmagliacatena.jpg",
     "size": "12x17 in",
-    "featured": true,
-    "project": "Work"
+    "featured": false,
+    "project": "Quirks"
+  },
+  {
+    "title": "Self-Portrait",
+    "year": 2025,
+    "medium": "Oil on canvas",
+    "image": "images/sp1.jpg",
+    "size": "?x? in",
+    "featured": false,
+    "project": "Therapies"
+  },
+  {
+    "title": "Self-Portrait",
+    "year": 2025,
+    "medium": "Oil on canvas",
+    "image": "images/sp2.jpg",
+    "size": "?x? in",
+    "featured": false,
+    "project": "Therapies"
   },
   {
     "title": "Piedone",
@@ -69,33 +114,33 @@
     "image": "images/piedone.jpg",
     "size": "12x22 in",
     "featured": false,
-    "project": "Work"
-  },
-  {
-    "title": "Album cover",
-    "year": 2023,
-    "medium": "Oil pastels on canvas",
-    "image": "images/stanzasolidi.jpg",
-    "size": "20x16 cm",
-    "featured": false,
-    "project": "Work"
-  },
-  {
-    "title": "RGB",
-    "year": 2023,
-    "medium": "Colored pencil on paper",
-    "image": "images/rgb.jpg",
-    "size": "14x11 in",
-    "featured": false,
-    "project": "Work"
+    "project": "Quirks"
   },
   {
     "title": "Natalia's Callas",
-    "year": 2024,
+    "year": 2025,
     "medium": "Oil on canvas",
     "image": "images/calle.jpg",
     "size": "16x20 in",
     "featured": false,
+    "project": "Therapies"
+  },
+  {
+    "title": "Queen of Clouds",
+    "year": 2025,
+    "medium": "Oil on canvas",
+    "image": "images/queenofclouds.jpg",
+    "size": "?x? in",
+    "featured": false,
+    "project": "Queens"
+  },
+  {
+    "title": "Queen of Red Crows and Red Umbrellas",
+    "year": 2025,
+    "medium": "Oil on canvas",
+    "image": "images/queenofredcrowsandredumbrellas.jpg",
+    "size": "?x? in",
+    "featured": true,
     "project": "Queens"
   },
   {
@@ -105,7 +150,7 @@
     "image": "images/perspective.jpg",
     "size": "14x11 cm",
     "featured": false,
-    "project": "Empty spaces"
+    "project": "Quirks"
   },
   {
     "title": "Toilet",
@@ -114,7 +159,7 @@
     "image": "images/toilet.jpg",
     "size": "9x11 in",
     "featured": false,
-    "project": "Empty spaces"
+    "project": "Quirks"
   },
   {
     "title": "Sala",
@@ -123,7 +168,7 @@
     "image": "images/sala.jpg",
     "size": "100x81 cm",
     "featured": false,
-    "project": "Empty spaces"
+    "project": "Quirks"
   },
   {
     "title": "Blue Frame",
@@ -132,7 +177,7 @@
     "image": "images/corniceblu.jpg",
     "size": "14.5x11.5 in",
     "featured": false,
-    "project": "Work"
+    "project": "Quirks"
   },
   {
     "title": "Buzzati",
@@ -141,7 +186,7 @@
     "image": "images/giaccavivente.JPG",
     "size": "14x18 in",
     "featured": false,
-    "project": "Work"
+    "project": "Quirks"
   },
   {
     "title": "On Van Ness",
@@ -150,16 +195,16 @@
     "image": "images/burgervanness.jpg",
     "size": "8x12 in",
     "featured": false,
-    "project": "Empty spaces"
+    "project": "Therapies"
   },
   {
-    "title": "Monster",
-    "year": 2022,
-    "medium": "Acrylic on paper",
-    "image": "images/monster1.JPG",
-    "size": "13x13 in",
+    "title": "RGB",
+    "year": 2023,
+    "medium": "Colored pencils on paper",
+    "image": "images/rgb.jpg",
+    "size": "14x11 in",
     "featured": false,
-    "project": "Monsters"
+    "project": "Therapies"
   },
   {
     "title": "Fork Death",
@@ -168,16 +213,16 @@
     "image": "images/forkdeath.jpg",
     "size": "?x? in",
     "featured": false,
-    "project": "Work"
+    "project": "Therapies"
   },
   {
-    "title": "I really do love him",
-    "year": 2024,
+    "title": "Dita Naso",
+    "year": 2025,
     "medium": "Mixed media on paper",
-    "image": "images/ilovemygodson.jpg",
-    "size": "3x3 in",
+    "image": "images/ditanaso.jpg",
+    "size": "?x? in",
     "featured": false,
-    "project": "Work"
+    "project": "Quirks"
   },
   {
     "title": "Saint Mary Magdalene",
@@ -195,16 +240,16 @@
     "image": "images/giocata.jpg",
     "size": "16x12 in",
     "featured": false,
-    "project": "Work"
+    "project": "Therapies"
   },
   {
     "title": "Pacifico",
     "year": 2024,
-    "medium": "Mixed media on paper",
+    "medium": "Ink on paper",
     "image": "images/roundcantopview.jpg",
     "size": "⌀7 in",
     "featured": false,
-    "project": "Empty spaces"
+    "project": "Quirks"
   },
   {
     "title": "Hear Hear",
@@ -213,7 +258,7 @@
     "image": "images/ears.JPG",
     "size": "8x10 in",
     "featured": false,
-    "project": "Anatomy"
+    "project": "Quirks"
   },
   {
     "title": "Simona",
@@ -222,7 +267,7 @@
     "image": "images/handwithspoon.JPG",
     "size": "13x13 in",
     "featured": false,
-    "project": "Anatomy"
+    "project": "Therapies"
   },
   {
     "title": "Chapa",
@@ -231,15 +276,15 @@
     "image": "images/handwithapple.JPG",
     "size": "16x12 in",
     "featured": false,
-    "project": "Anatomy"
+    "project": "Quirks"
   },
   {
-    "title": "Invisible Ink",
-    "year": 2023,
-    "medium": "Oil on canvas",
-    "image": "images/handwithpencil.JPG",
-    "size": "16x12 in",
+    "title": "Thesis",
+    "year": 2020,
+    "medium": "Watercolors on paper",
+    "image": "images/thesis.jpg",
+    "size": "?x? in",
     "featured": false,
-    "project": "Anatomy"
+    "project": "Statements"
   }
 ]

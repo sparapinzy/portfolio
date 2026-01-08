@@ -15,10 +15,29 @@ fetch('artworks.json')
       projects[projectName].push(art);
     });
 
-    // Display projects on archive page
+    // Display projects on archive page (with custom order)
     const projectsGrid = document.getElementById('projects-grid');
     if (projectsGrid) {
-      Object.keys(projects).sort().forEach(projectName => {
+      const order = [
+        'queens',
+        'quirks',
+        'statements',
+        'therapies'
+      ];
+
+      Object.keys(projects).sort((a, b) => {
+        const al = a.toLowerCase();
+        const bl = b.toLowerCase();
+        const ia = order.indexOf(al);
+        const ib = order.indexOf(bl);
+
+        if (ia === -1 && ib === -1) {
+          return a.localeCompare(b);
+        }
+        if (ia === -1) return 1;
+        if (ib === -1) return -1;
+        return ia - ib;
+      }).forEach(projectName => {
         const projectArtworks = projects[projectName];
         const previewImage = projectArtworks[0].image; // Use first image as preview
         
@@ -71,13 +90,6 @@ function getProjectNameFromURL() {
   const match = url.match(/project-([^.]+)\.html/);
   if (match) {
     const projectSlug = match[1];
-    // Handle special cases
-    if (projectSlug === 'empty-spaces') {
-      return 'Empty spaces';
-    }
-    if (projectSlug === 'loose-works') {
-      return 'Loose Works';
-    }
     // Convert slug to project name
     return projectSlug.split('-').map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
