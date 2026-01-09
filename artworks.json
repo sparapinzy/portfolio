@@ -64,11 +64,20 @@
   },
   {
     "title": "Self-Portrait",
-    "year": 2024,
+    "year": 2025,
     "medium": "Oil on canvas",
     "image": "images/ioconappunti.jpg",
     "size": "22x28 in",
     "featured": true,
+    "project": "Therapies"
+  },
+  {
+    "title": "Cip Colore",
+    "year": 2025,
+    "medium": "Mixed media on paper",
+    "image": "images/giocata.jpg",
+    "size": "16x12 in",
+    "featured": false,
     "project": "Therapies"
   },
   {
@@ -88,24 +97,6 @@
     "size": "12x17 in",
     "featured": false,
     "project": "Quirks"
-  },
-  {
-    "title": "Self-Portrait",
-    "year": 2025,
-    "medium": "Oil on canvas",
-    "image": "images/sp1.jpg",
-    "size": "?x? in",
-    "featured": false,
-    "project": "Therapies"
-  },
-  {
-    "title": "Self-Portrait",
-    "year": 2025,
-    "medium": "Oil on canvas",
-    "image": "images/sp2.jpg",
-    "size": "?x? in",
-    "featured": false,
-    "project": "Therapies"
   },
   {
     "title": "Piedone",
@@ -181,7 +172,7 @@
   },
   {
     "title": "Buzzati",
-    "year": 2024,
+    "year": 2023,
     "medium": "Graphite on paper",
     "image": "images/giaccavivente.JPG",
     "size": "14x18 in",
@@ -190,7 +181,7 @@
   },
   {
     "title": "On Van Ness",
-    "year": 2024,
+    "year": 2023,
     "medium": "Watercolors on paper",
     "image": "images/burgervanness.jpg",
     "size": "8x12 in",
@@ -232,15 +223,6 @@
     "size": "?x? in",
     "featured": false,
     "project": "Queens"
-  },
-  {
-    "title": "Cip Colore",
-    "year": 2025,
-    "medium": "Mixed media on paper",
-    "image": "images/giocata.jpg",
-    "size": "16x12 in",
-    "featured": false,
-    "project": "Therapies"
   },
   {
     "title": "Pacifico",
