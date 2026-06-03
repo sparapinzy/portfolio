@@ -24,7 +24,7 @@
     "image": "images/handfoot.JPG",
     "size": "24x30 in",
     "featured": true,
-    "project": "Quirks"
+    "project": "Body"
   },
   {
     "title": "Solvay 2027",
@@ -33,7 +33,7 @@
     "image": "images/solvay2027.jpg",
     "size": "45x33 in",
     "featured": true,
-    "project": "Statements"
+    "project": "Queens"
   },
   {
     "title": "Monster",
@@ -42,7 +42,7 @@
     "image": "images/monster1.JPG",
     "size": "13x13 in",
     "featured": true,
-    "project": "Therapies"
+    "project": "Monsters"
   },
   {
     "title": "Living Room",
@@ -51,7 +51,7 @@
     "image": "images/livingroom.jpg",
     "size": "25x22 in",
     "featured": true,
-    "project": "Therapies"
+    "project": "Love"
   },
   {
     "title": "East Milan",
@@ -60,7 +60,7 @@
     "image": "images/milanoest.jpg",
     "size": "36x24 in",
     "featured": true,
-    "project": "Therapies"
+    "project": "Love"
   },
   {
     "title": "Self-Portrait",
@@ -78,7 +78,7 @@
     "image": "images/giocata.jpg",
     "size": "16x12 in",
     "featured": false,
-    "project": "Therapies"
+    "project": "Love"
   },
   {
     "title": "Self-Portrait",
@@ -96,7 +96,7 @@
     "image": "images/pinzasmagliacatena.jpg",
     "size": "12x17 in",
     "featured": false,
-    "project": "Quirks"
+    "project": "Body"
   },
   {
     "title": "Piedone",
@@ -105,7 +105,7 @@
     "image": "images/piedone.jpg",
     "size": "12x22 in",
     "featured": false,
-    "project": "Quirks"
+    "project": "Body"
   },
   {
     "title": "Natalia's Callas",
@@ -117,10 +117,19 @@
     "project": "Therapies"
   },
   {
-    "title": "Queen of Clouds",
+    "title": "The Queen of Clouds",
     "year": 2025,
     "medium": "Oil on canvas",
-    "image": "images/queenofclouds.jpg",
+    "image": "images/queen_clouds_small_opt.jpg",
+    "size": "?x? in",
+    "featured": false,
+    "project": "Queens"
+  },
+  {
+    "title": "The Queen of Bushes",
+    "year": 2025,
+    "medium": "Oil on canvas",
+    "image": "images/queen_bush_small_opt.jpg",
     "size": "?x? in",
     "featured": false,
     "project": "Queens"
@@ -130,6 +139,24 @@
     "year": 2025,
     "medium": "Oil on canvas",
     "image": "images/queenofredcrowsandredumbrellas.jpg",
+    "size": "?x? in",
+    "featured": true,
+    "project": "Queens"
+  },
+  {
+    "title": "Queen Marshall Nonna",
+    "year": 2025,
+    "medium": "Oil on canvas",
+    "image": "images/marshall_nonna_small_opt.jpg",
+    "size": "?x? in",
+    "featured": true,
+    "project": "Queens"
+  },
+  {
+    "title": "The Mad Witch",
+    "year": 2026,
+    "medium": "Oil on canvas",
+    "image": "images/mad_witch_small_opt.jpg",
     "size": "?x? in",
     "featured": true,
     "project": "Queens"
@@ -150,7 +177,7 @@
     "image": "images/toilet.jpg",
     "size": "9x11 in",
     "featured": false,
-    "project": "Quirks"
+    "project": "Body"
   },
   {
     "title": "Sala",
@@ -168,7 +195,7 @@
     "image": "images/corniceblu.jpg",
     "size": "14.5x11.5 in",
     "featured": false,
-    "project": "Quirks"
+    "project": "Body"
   },
   {
     "title": "Buzzati",

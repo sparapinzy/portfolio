@@ -18,38 +18,41 @@ fetch('artworks.json')
     // Display projects on archive page (with custom order)
     const projectsGrid = document.getElementById('projects-grid');
     if (projectsGrid) {
-      const order = [
-        'queens',
-        'quirks',
-        'statements',
-        'therapies'
+      const displayedProjects = [
+        {
+          projectNames: ['Queens'],
+          displayName: 'The Queen Series',
+          href: 'project-queens.html'
+        },
+        {
+          projectNames: ['Love'],
+          displayName: 'The Love Series',
+          href: 'project-love-series.html'
+        },
+        {
+          projectNames: ['Body'],
+          displayName: 'The Body Series',
+          href: 'project-body-series.html'
+        },
+        {
+          projectNames: ['Monsters', 'Therapies'],
+          displayName: 'Monsters and Therapies',
+          href: 'project-monsters-and-therapies.html'
+        }
       ];
 
-      Object.keys(projects).sort((a, b) => {
-        const al = a.toLowerCase();
-        const bl = b.toLowerCase();
-        const ia = order.indexOf(al);
-        const ib = order.indexOf(bl);
-
-        if (ia === -1 && ib === -1) {
-          return a.localeCompare(b);
-        }
-        if (ia === -1) return 1;
-        if (ib === -1) return -1;
-        return ia - ib;
-      }).forEach(projectName => {
-        const projectArtworks = projects[projectName];
-        const previewImage = projectArtworks[0].image; // Use first image as preview
+      displayedProjects.forEach(project => {
+        const projectArtworks = project.projectNames.flatMap(projectName => projects[projectName] || []);
+        const previewImage = projectArtworks[0]?.image;
         
         const projectCard = document.createElement('a');
-        const projectSlug = projectName.toLowerCase().replace(/\s+/g, '-');
-        projectCard.href = `project-${projectSlug}.html`;
+        projectCard.href = project.href;
         projectCard.classList.add('project-card');
         
         projectCard.innerHTML = `
-          <img src="${previewImage}" alt="${projectName}" class="project-card-image">
+          ${previewImage ? `<img src="${previewImage}" alt="${project.displayName}" class="project-card-image">` : '<div class="project-card-image project-card-placeholder"></div>'}
           <div class="project-card-info">
-            <h3 class="project-card-title">${projectName}</h3>
+            <h3 class="project-card-title">${project.displayName}</h3>
           </div>
         `;
         
@@ -60,8 +63,8 @@ fetch('artworks.json')
     // Display artworks in gallery (for project pages)
     const gallery = document.getElementById('gallery');
     if (gallery) {
-      const projectName = getProjectNameFromURL();
-      const projectArtworks = projects[projectName] || [];
+      const projectNames = getProjectNamesFromURL();
+      const projectArtworks = projectNames.flatMap(projectName => projects[projectName] || []);
       
       projectArtworks.forEach((art, index) => {
         const item = document.createElement('div');
@@ -85,17 +88,28 @@ fetch('artworks.json')
   })
   .catch(err => console.error('Error loading artworks:', err));
 
-function getProjectNameFromURL() {
+function getProjectNamesFromURL() {
   const url = window.location.pathname;
   const match = url.match(/project-([^.]+)\.html/);
   if (match) {
     const projectSlug = match[1];
+    const projectMap = {
+      'queens': ['Queens'],
+      'love-series': ['Love'],
+      'body-series': ['Body'],
+      'monsters-and-therapies': ['Monsters', 'Therapies']
+    };
+
+    if (projectMap[projectSlug]) {
+      return projectMap[projectSlug];
+    }
+
     // Convert slug to project name
-    return projectSlug.split('-').map(word => 
+    return [projectSlug.split('-').map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
-    ).join(' ');
+    ).join(' ')];
   }
-  return null;
+  return [];
 }
 
 // Lightbox elements

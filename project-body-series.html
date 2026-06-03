@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ariadna Arranz - Home</title>
+  <title>The Body Series - Ariadna Arranz</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -22,9 +22,9 @@
     </div>
     <div class="header-right">
       <nav class="site-nav">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="archive.html">Projects</a>
+        <a href="archive.html" class="active">Projects</a>
       </nav>
       <button id="theme-toggle" aria-label="Toggle light/dark mode">
         <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -35,13 +35,11 @@
   </header>
 
   <!-- ===== MAIN CONTENT ===== -->
-  <main>
-    <div class="carousel-wrapper">
-      <figure class="featured-work">
-        <img src="images/lady_injustice.jpg" alt="Lady Injustice">
-        <figcaption>Lady Injustice &mdash; Oil on canvas &mdash; 72x40 in &mdash; 2025</figcaption>
-      </figure>
+  <main class="project-page">
+    <div class="project-header">
+      <h2>The Body Series</h2>
     </div>
+    <div id="gallery" class="gallery-list"></div>
   </main>
 
   <!-- ===== FOOTER ===== -->
@@ -68,6 +66,18 @@
     <p class="last-updated">Last updated: <span id="last-updated"></span></p>
   </footer>
 
-  <script src="js/script.js" defer></script>
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+    <span class="lightbox-next">&#10095;</span>
+  </div>
+
+  <script src="js/archive.js" defer></script>
 </body>
 </html>
+
