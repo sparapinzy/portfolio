@@ -43,7 +43,8 @@ fetch('artworks.json')
 
       displayedProjects.forEach(project => {
         const projectArtworks = project.projectNames.flatMap(projectName => projects[projectName] || []);
-        const previewImage = projectArtworks[0]?.image;
+        const coverArtwork = projectArtworks.find(art => art.cover) || projectArtworks[0];
+        const previewImage = coverArtwork?.image;
         
         const projectCard = document.createElement('a');
         projectCard.href = project.href;

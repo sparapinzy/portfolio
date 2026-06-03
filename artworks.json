@@ -1,4 +1,4 @@
-[ 
+[
   {
     "title": "Lady Injustice",
     "year": 2025,
@@ -24,7 +24,8 @@
     "image": "images/handfoot.JPG",
     "size": "24x30 in",
     "featured": true,
-    "project": "Body"
+    "project": "Body",
+    "cover": true
   },
   {
     "title": "Solvay 2027",
@@ -33,7 +34,8 @@
     "image": "images/solvay2027.jpg",
     "size": "45x33 in",
     "featured": true,
-    "project": "Queens"
+    "project": "Queens",
+    "cover": true
   },
   {
     "title": "Monster",
@@ -42,7 +44,8 @@
     "image": "images/monster1.JPG",
     "size": "13x13 in",
     "featured": true,
-    "project": "Monsters"
+    "project": "Monsters",
+    "cover": true
   },
   {
     "title": "Living Room",
@@ -60,7 +63,8 @@
     "image": "images/milanoest.jpg",
     "size": "36x24 in",
     "featured": true,
-    "project": "Love"
+    "project": "Love",
+    "cover": true
   },
   {
     "title": "Self-Portrait",
@@ -168,7 +172,7 @@
     "image": "images/perspective.jpg",
     "size": "14x11 cm",
     "featured": false,
-    "project": "Quirks"
+    "project": "Therapies"
   },
   {
     "title": "Toilet",
@@ -186,7 +190,7 @@
     "image": "images/sala.jpg",
     "size": "100x81 cm",
     "featured": false,
-    "project": "Quirks"
+    "project": "Love"
   },
   {
     "title": "Blue Frame",
@@ -204,7 +208,7 @@
     "image": "images/giaccavivente.JPG",
     "size": "14x18 in",
     "featured": false,
-    "project": "Quirks"
+    "project": "Therapies"
   },
   {
     "title": "On Van Ness",
@@ -213,7 +217,7 @@
     "image": "images/burgervanness.jpg",
     "size": "8x12 in",
     "featured": false,
-    "project": "Therapies"
+    "project": "Love"
   },
   {
     "title": "RGB",
@@ -240,7 +244,7 @@
     "image": "images/ditanaso.jpg",
     "size": "?x? in",
     "featured": false,
-    "project": "Quirks"
+    "project": "Body"
   },
   {
     "title": "Saint Mary Magdalene",
@@ -267,7 +271,7 @@
     "image": "images/ears.JPG",
     "size": "8x10 in",
     "featured": false,
-    "project": "Quirks"
+    "project": "Body"
   },
   {
     "title": "Simona",
@@ -276,7 +280,7 @@
     "image": "images/handwithspoon.JPG",
     "size": "13x13 in",
     "featured": false,
-    "project": "Therapies"
+    "project": "Body"
   },
   {
     "title": "Chapa",
@@ -285,15 +289,6 @@
     "image": "images/handwithapple.JPG",
     "size": "16x12 in",
     "featured": false,
-    "project": "Quirks"
-  },
-  {
-    "title": "Thesis",
-    "year": 2020,
-    "medium": "Watercolors on paper",
-    "image": "images/thesis.jpg",
-    "size": "?x? in",
-    "featured": false,
-    "project": "Statements"
+    "project": "Body"
   }
 ]
