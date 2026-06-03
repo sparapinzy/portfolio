@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600;700&display=swap");
+
 /* ============================= */
 /* LIGHT MODE VARIABLES */
 /* ============================= */
 :root {
   /* Fonts */
-  --font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family: "EB Garamond", Georgia, serif;
+  --title-font-family: "Archivo Black", Arial, sans-serif;
   
   /* Colors */
   --bg-color: #fafafa;
@@ -27,20 +30,21 @@
 /* DARK MODE VARIABLES */
 /* ============================= */
 body.dark-mode {
-  --font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family: "EB Garamond", Georgia, serif;
+  --title-font-family: "Archivo Black", Arial, sans-serif;
 
-  --bg-color: #1a1a1a;
+  --bg-color: #000;
   --text-color: #fff;
-  --header-bg: #1a1a1a;
+  --header-bg: #000;
   --nav-link: #fff;
   --nav-link-active: #fff;
-  --footer-bg: #1a1a1a;
+  --footer-bg: #000;
   --footer-text: #fff;
-  --button-bg: #1a1a1a;
+  --button-bg: #000;
   --button-text: #fff;
   --button-hover-bg: #c0c0c0;
-  --button-hover-text: #1a1a1a;
-  --carousel-bg: #2a2a2a; /* Slightly lighter dark gray, good for paintings */
+  --button-hover-text: #000;
+  --carousel-bg: #000;
   --caption-color: #fff;
   --social-links-color: #fff;
   --accent-color: #c0c0c0; /* Silver accent */
@@ -56,6 +60,13 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--title-font-family);
+  font-weight: 400;
 }
 
 h1 {
@@ -130,7 +141,8 @@ h1 {
   margin: 0 10px;
   text-decoration: none;
   color: var(--nav-link);
-  font-weight: bold;
+  font-family: var(--title-font-family);
+  font-weight: 400;
 }
 
 .site-nav a.active {
@@ -150,6 +162,24 @@ h1 {
   text-align: center;
   margin-top: 2rem;
   padding: 0 1rem;
+}
+
+.featured-work {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.featured-work img {
+  max-width: 100%;
+  max-height: 650px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
 }
 
 .carousel {
@@ -401,6 +431,7 @@ footer .copyright {
 .about-section p {
   margin: 0.5rem 0;
   line-height: 1.6;
+  text-align: left;
 }
 
 .get-in-touch {
@@ -576,6 +607,7 @@ body.dark-mode a[role="button"]:hover {
 
 .project-card {
   background: var(--carousel-bg);
+  border: 1px solid var(--nav-link);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -599,6 +631,11 @@ body.dark-mode a[role="button"]:hover {
   display: block;
   padding: 1rem;
   box-sizing: border-box;
+}
+
+.project-card-placeholder {
+  padding: 0;
+  border-bottom: 1px solid var(--nav-link);
 }
 
 .project-card-info {
